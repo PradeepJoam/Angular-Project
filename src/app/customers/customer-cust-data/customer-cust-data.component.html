@@ -1,0 +1,54 @@
+<div class="container">
+        <div class="row">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     
+                         <div class="col-md-4">
+                            <a routerLink="../customers" class="btn btn-primary active" role="button" routerLinkActive="active">Customers</a>
+                      
+                         </div>
+                                
+                         <div class="col-md-4">
+                                <a routerLink="../add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
+                         </div>  <div class="col-md-4">
+                                <a routerLink="../custom-data" class="btn btn-primary active" role="button" routerLinkActive="active">Custom Customers Data</a>
+                         </div>
+                    </div>
+                </nav>
+            </div>
+           
+            
+                     <div class="form-group">
+                       <label for="exampleInputEmail1">Search By Name</label>
+                       <input type="email" [(ngModel)]="txt"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                       <small id="emailHelp" class="form-text text-muted">We'll never share your username.</small>
+                     </div>
+                      <button (click)="searchByNameData(txt)" type="submit" class="btn btn-primary">Submit</button>
+     
+
+
+                    
+
+ </div> 
+
+ <div class="container">
+            <table class="table" *ngIf="validData;else nonValid">
+                   <tr>
+                          <th>Id</th>
+                          <th>Name</th>
+                          <th>Age</th>
+                   </tr>
+              
+                            <tr *ngFor="let row  of searchData; let i = index">   
+                                          <td>{{i+1}} </td>
+                                          <td>{{row.name}} </td>
+                                          <td>{{row.age}}</td>
+                            
+                            </tr> 
+                       
+                        
+              
+               </table>   
+          
+         <ng-template #nonValid>Not Find Data</ng-template>      
+ </div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 
+                     <div class="col-md-4">
+                        <a routerLink="../customers" class="btn btn-primary active" role="button" routerLinkActive="active">Customers</a>
+                  
+                     </div>
+                            
+                     <div class="col-md-4">
+                            <a routerLink="../add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
+                     </div>  <div class="col-md-4">
+                            <a routerLink="../custom-data" class="btn btn-primary active" role="button" routerLinkActive="active">Custom Customers Data</a>
+                     </div>
+                </div>
+            </nav>
+        </div>
+       
+</div> 
+
+
+<div class="container">
+<h1>Customers</h1>
+<div *ngFor="let customer of customers" style="width: 600px;">
+  <div class="col-md-6"><app-customer-details [customer]='customer'></app-customer-details></div>
+ 
+  
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <div style="margin-top:20px;">
+          <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete All</button>
+        </div>
+    </div>
+</div>
+
+
+</div>

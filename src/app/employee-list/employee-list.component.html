@@ -1,0 +1,23 @@
+<div class="container">
+<h1>Employee  List</h1>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let empData of employee">
+            {{empData.empId}} .{{empData.empName}} -  {{empData.empAge}}  {{empData.empSalary}}
+    </li>
+   
+  </ul>
+
+
+  <h3>Users input Pin Code Number</h3><input type="number" [(ngModel)]="pinCode" />
+   <input type="button" value="View Pin Code Location" (click)="findPinLocation()" />
+
+<ul>
+   <div *ngFor="let row  of persondata; let i = index">
+             
+    <li *ngFor="let composant of row.PostOffice">
+      {{composant.Name}} --{{composant.BranchType}}--{{composant.Region}}
+      </li>
+      </div>
+</ul><br>
+
+</div>
